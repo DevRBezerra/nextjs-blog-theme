@@ -1,6 +1,4 @@
 const tmi = require('tmi.js');
-const express = require('express');
-const app = express();
 
 // Configuração do bot
 const opts = {
@@ -12,7 +10,7 @@ const opts = {
     'vladdraco01',  // Canal 1
     'manothrp',     // Canal 2
     'hotzgod',
-    'AntonioBubsy'// Canal 3
+    'AntonioBubsy'  // Canal 3
   ]
 };
 
@@ -28,7 +26,7 @@ const sorteioMessages = [
   'Streamlabs: Um SORTEIO VALENDO 1000 GP está rolando para Viewer digite !sorteio para entrar.',
   'Streamlabs: - Um SORTEIO VALENDO 1000 GP foi iniciado para Viewer. Digite !sorteio para entrar no sorteio!!!',
   'Streamlabs: < Um sorteio Sorteio de 1k de GP foi iniciado para Viewer. Use !sorteio para participar do sorteio.',
-  'Um sorteio Sorteio de 1k de GP foi iniciado para Viewer. Use !sorteio para participar do sorteio.'// Nova variação
+  'Um sorteio Sorteio de 1k de GP foi iniciado para Viewer. Use !sorteio para participar do sorteio.' // Nova variação
 ];
 
 // Mensagens que indicam que o bot ganhou o sorteio
@@ -68,13 +66,3 @@ client.on('message', (channel, tags, message, self) => {
 
 // Conectar o bot à Twitch
 client.connect();
-
-// Servidor Express para manter o bot ativo
-app.get('/', (req, res) => {
-  res.send('Bot is running!');
-});
-
-// Rodando o servidor na porta 3000
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
